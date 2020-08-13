@@ -1,0 +1,46 @@
+﻿<div layout="column" ng-cloak class="md-inline-form">
+    <md-content layout-padding>
+        <div>
+            <form name="userForm" ng-submit="onSubmitForm(userForm.$valid)">
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Tienda</label>
+                        <!--<md-select ng-model="store" ng-required="isRequired" ng-model-options="{trackBy: '$value.IdTienda'}">-->
+                        <md-select ng-model="selectedStore" ng-required="isRequired" >
+                            <!--<md-option><em>Seleccione un cliente</em></md-option>-->
+                            <md-option ng-repeat="store in stores track by store.IdTienda" ng-value="store.IdTienda">
+                                {{store.Sucursal}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Clientes</label>
+                        <md-select ng-model="selectedClient" ng-required="isRequired" >
+                            <!--<md-option><em>Seleccione un cliente</em></md-option>-->
+                            <md-option ng-repeat="client in clients" ng-value="client.IdCliente">
+                                {{client.Nombre}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Monto</label>
+                        <input type="number" required ng-model="venta.Monto" min="0" placeholder="0.00" value="0.00" step="0.01">
+                        <div ng-messages="venta.Nombre.$error">
+                            <div ng-message="required">Requerido.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                    </md-input-container>
+                </div>
+                <div>
+                    <md-button class="md-raised md-primary" type="submit">Guardar</md-button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <md-button class="md-raised" ng-click="backToSells()">Regresar</md-button>
+        </div>
+    </md-content>
+</div>

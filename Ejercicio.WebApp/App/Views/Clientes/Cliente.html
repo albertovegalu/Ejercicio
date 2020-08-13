@@ -1,0 +1,37 @@
+﻿<div layout="column" ng-cloak class="md-inline-form">
+    <md-content layout-padding>
+        <div>
+            <form name="userForm" ng-submit="onSubmitForm(userForm.$valid)">
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Nombre</label>
+                        <input type="text" required ng-model="client.Nombre" maxlength="30">
+                        <div ng-messages="client.Nombre.$error">
+                            <div ng-message="required">Requerido.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Apellidos</label>
+                        <input type="text" required ng-model="client.Apellidos" maxlength="50">
+                        <div ng-messages="client.Apellidos.$error">
+                            <div ng-message="required">Requerido.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <md-input-container class="md-block">
+                    <label>Dirección</label>
+                    <input type="text" required ng-model="client.Direccion" maxlength="100">
+                    <div ng-messages="client.Direccion.$error">
+                        <div ng-message="required">Requerido.</div>
+                    </div>
+                </md-input-container>
+                <div>
+                    <md-button class="md-raised md-primary" type="submit">Guardar</md-button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <md-button class="md-raised" ng-click="backtoClients()">Regresar</md-button>
+        </div>
+    </md-content>
+</div>

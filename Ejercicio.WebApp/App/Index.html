@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tienda</title>
+
+    <link href="../Content/angular-material.css" rel="stylesheet" />
+</head>
+<body ng-app="TiendaApp">
+    <!--Scripts-->
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-animate.min.js"></script>
+    <script src="../Scripts/angular-aria.min.js"></script>
+    <script src="../Scripts/angular-messages.min.js"></script>
+    <script src="../Scripts/angular-material.min.js"></script>
+    <script src="../Scripts/angular-route.min.js"></script>
+    <script src="../Scripts/angular-ui-router.js"></script>
+
+    <!--App-->
+    <script src="app.js"></script>
+
+    <!--Controllers-->
+    <script src="Controller/DemoController.js"></script>
+    <script src="Controller/IndexController.js"></script>
+    <script src="Controller/ClientesController.js"></script>
+    <script src="Controller/ClienteController.js"></script>
+    <script src="Controller/TiendasController.js"></script>
+    <script src="Controller/TiendaController.js"></script>
+    <script src="Controller/VentasController.js"></script>
+    <script src="Controller/VentaController.js"></script>
+    <script src="Controller/MayoresComprasController.js"></script>
+
+    <!--Service Factory-->
+    <script src="Factory/ClientesServiceFactory.js"></script>
+    <script src="Factory/TiendaServiceFactory.js"></script>
+    <script src="Factory/ClienteTiendaServiceFactory.js"></script>
+
+    <div ng-controller="IndexController" layout="column" style="height:500px;" ng-cloak="" class="sidenavdemoBasicUsage">
+        <md-toolbar class="md-hue-2">
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button"
+                           aria-label="Settings"
+                           ng-click="toggleLeft()">
+                    <md-icon md-svg-icon="../Icons/Svg/menu.svg"></md-icon>
+                </md-button>
+                <span flex></span>
+                <h1 class="md-title text-center">
+                    Tienda
+                </h1>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <div ng-view></div>
+        <section layout="row" flex="">
+            <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4" id="leftSideNav" md-disable-backdrop="true">
+                <md-toolbar class="md-theme-indigo" layout="row">
+                    <h1 class="md-toolbar-tools">Menú</h1>
+                    <span flex></span>
+                    <md-button ng-click="close()">Cerrar</md-button>
+                </md-toolbar>
+                <md-content layout-padding="" layout="column" layout-align="start start">
+                    <md-button ng-click="redirection('ConsultarClientes')" class="md-primary">Clientes</md-button>
+                    <md-button ng-click="redirection('ConsultarTiendas')" class="md-primary">Tiendas</md-button>
+                    <md-button ng-click="redirection('ConsultarVentas')" class="md-primary">Ventas</md-button>
+                    <md-button ng-click="redirection('MayoresCompras')" class="md-primary">Mayores Compras</md-button>
+                </md-content>
+            </md-sidenav>
+        </section>
+    </div>
+</body>
+</html>

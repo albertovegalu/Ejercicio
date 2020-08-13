@@ -1,0 +1,23 @@
+﻿<div ng-cloak>
+    <md-toolbar class="md-theme-light">
+        <h2 class="md-toolbar-tools" layout-align="space-between center">
+            <span>Tiendas</span>
+            <md-button class="md-secondary" ng-click="addStore()">Añadir</md-button>
+        </h2>
+    </md-toolbar>
+    <md-content>
+        <md-list>
+            <md-list-item class="md-3-line" ng-repeat="store in stores">
+                <div class="md-list-item-text">
+                    <h3>{{store.Sucursal}}</h3>
+                </div>
+                <div class="md-list-item-text">
+                    <h3>{{store.Direccion}}</h3>
+                </div>
+                <md-button class="md-secondary" ng-click="updateStore(store)">Editar</md-button>
+                <md-divider></md-divider>
+                <md-button class="md-secondary" ng-click="deleteStore(store.IdTienda)">Eliminar</md-button>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>

@@ -1,0 +1,26 @@
+﻿<div ng-cloak>
+    <md-toolbar class="md-theme-light">
+        <h2 class="md-toolbar-tools" layout-align="space-between center">
+            <span>Clientes</span>
+            <md-button class="md-secondary" ng-click="addClient()">Añadir</md-button>
+        </h2>
+    </md-toolbar>
+    <md-content>
+        <md-list>
+            <md-list-item class="md-3-line" ng-repeat="client in clients">
+                <div class="md-list-item-text">
+                    <h3>{{client.Nombre}}</h3>
+                </div>
+                <div class="md-list-item-text">
+                    <h3>{{client.Apellidos}}</h3>
+                </div>
+                <div class="md-list-item-text">
+                    <h3>{{client.Direccion}}</h3>
+                </div>
+                <md-button class="md-secondary" ng-click="updateClient(client)">Editar</md-button>
+                <md-divider></md-divider>
+                <md-button class="md-secondary" ng-click="deleteClient(client.IdCliente)">Eliminar</md-button>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>

@@ -1,0 +1,30 @@
+﻿<div layout="column" ng-cloak class="md-inline-form">
+    <md-content layout-padding>
+        <div>
+            <form name="userForm" ng-submit="onSubmitForm(userForm.$valid)">
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Nombre Sucursal</label>
+                        <input type="text" required ng-model="store.Sucursal" maxlength="30">
+                        <div ng-messages="store.Sucursal.$error">
+                            <div ng-message="required">Requerido.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <md-input-container class="md-block">
+                    <label>Dirección</label>
+                    <input type="text" required ng-model="store.Direccion" maxlength="100">
+                    <div ng-messages="store.Direccion.$error">
+                        <div ng-message="required">Requerido.</div>
+                    </div>
+                </md-input-container>
+                <div>
+                    <md-button class="md-raised md-primary" type="submit">Guardar</md-button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <md-button class="md-raised" ng-click="backToStores()">Regresar</md-button>
+        </div>
+    </md-content>
+</div>

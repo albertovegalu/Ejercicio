@@ -1,0 +1,15 @@
+﻿<h1>Hello Spinner!</h1>
+<div growl></div>
+<input type="button" ng-click="startSpin()" value="Start spinner" />
+<input type="button" ng-click="stopSpin()" value="Stop spinner" />
+<br />Spinner active: {{spinneractive}}
+<br />Started: {{startcounter}} times
+<br />
+<!--<span us-spinner="{radius:30, width:8, length: 16}" spinner-key="spinner-1"></span>-->
+<ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></ul>
+
+<!--<slider floor="0" ceiling="10" step="1" precision="1" ng-model="kilometros" ng-mouseup="onChange()"></slider>-->
+
+<canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels"></canvas>
+<br />
+<div id="map"></div>
